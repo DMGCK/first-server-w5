@@ -1,5 +1,6 @@
 import { valuesService } from '../services/ValueService'
 import BaseController from '../utils/BaseController'
+import { logger } from "../utils/Logger"
 
 export class ValuesController extends BaseController {
   constructor() {
@@ -18,6 +19,7 @@ export class ValuesController extends BaseController {
    */
   async getAll(req, res, next) {
     try {
+      Logger.log
       const values = await valuesService.find()
       return res.send(values)
     } catch (error) {
